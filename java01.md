@@ -44,7 +44,7 @@ class: middle, center
 
 (Nach-)Besprechung der Inhalte der Vorlesung
 
-Denkanstöße zum lösen der Hausaufgaben, oder
+Denkanstöße zum lösen der Hausaufgaben
 
 ---
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+      * {
+        /*The Helvetica/Arial-based sans serif */
+        font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        list-style: none;
+        max-height: 100%;
+      }
+
+      li {
+        padding-bottom: 0.5rem;
+      }
+
+      img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        color: #222;
+      }
+
+      h2, h3, h4, h5, h6, p {
+        color: #444;
+      }
+
+      a {
+        color: #444;
+      }
+
+      #weeks {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: 4% 96%;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="weeks">
+      <div>
+        <button onclick="swapSource('java01.md')">10.10.19</button>
+        <button onclick="swapSource('java02.md')">17.10.19</button>
+        <button disabled onclick="swapSource('java03.md')">24.10.19</button>
+        <button disabled onclick="swapSource('java04.md')">31.10.19</button>
+        <button disabled onclick="swapSource('java05.md')">07.11.19</button>
+        <button disabled onclick="swapSource('java06.md')">14.11.19</button>
+        <button disabled onclick="swapSource('java07.md')">21.11.19</button>
+        <button disabled onclick="swapSource('java08.md')">28.11.19</button>
+        <button disabled onclick="swapSource('java09.md')">05.12.19</button>
+        <button disabled onclick="swapSource('java10.md')">12.12.19</button>
+        <button disabled onclick="swapSource('java11.md')">19.12.19</button>
+        <button disabled onclick="swapSource('java12.md')">09.01.20</button>
+        <button disabled onclick="swapSource('java13.md')">16.01.20</button>
+        <button disabled onclick="swapSource('java14.md')">23.01.20</button>
+        <button disabled onclick="swapSource('java15.md')">30.01.20</button>
+      </div>
+    </div>
+    <textarea id="source">
+    </textarea>
+    <script src="./remark-latest.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    const swapSource = (file) => {
+      const oldSlides = document.querySelectorAll('div[class^="remark"]');
+      oldSlides.forEach(slide => slide.outerHTML = '');
+
+      const slideshow = remark.create({
+        sourceUrl: file,
+      });
+    };
+
+    swapSource('java02.md');
+    </script>
+</body>
+
+</html>

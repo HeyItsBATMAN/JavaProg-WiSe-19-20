@@ -31,7 +31,7 @@ class: middle, center
 
 class: middle, center
 
-# Jetbrains IntelliJ als IDE
+# Jetbrains IntelliJ als alternatives IDE
 
 ---
 
@@ -53,7 +53,6 @@ double
 
 // Andere
 boolean
-void
 char
 
 ```
@@ -115,6 +114,7 @@ char doubleQuote = "A";
 // ERROR
 
 String foo = "Bar";
+// String (kein primitiver Datentyp) wird mit doppelten Anführungsstrichen initialisiert
 ```
 
 ---
@@ -130,6 +130,10 @@ namen.add("Kimon");
 namen.add("Max");
 
 ```
+
+### Erstellen einer Liste
+### Die Typen List und ArrayList werden aus java.util importiert
+### Mit der Methode .add() fügen wir neue Elemente hinzu
 
 ---
 
@@ -150,6 +154,10 @@ System.out.println(namen.get(2));
 
 ```
 
+### Das erste Element liegt in der Liste an der Stelle 0, also
+### Kimon liegt auf Stelle 0
+### Max liegt auf Stelle 1
+
 ---
 
 class: middle, left
@@ -164,6 +172,8 @@ for (int i = 0; i < namen.size(); i++) {
   System.out.println(namen.get(i));
 }
 ```
+
+### Klassische Schreibweise
 
 ---
 
@@ -180,18 +190,7 @@ for (String name : namen) {
 }
 ```
 
----
-
-class: middle, left
-
-```java
-List<String> namen = new ArrayList<String>();
-
-namen.add("Kimon");
-namen.add("Max");
-
-namen.forEach(name -> System.out.println(name));
-```
+### for-each Schreibweise
 
 ---
 
@@ -205,18 +204,7 @@ namen.add("Max");
 
 namen.remove(1);
 ```
----
 
-class: middle, left
-
-```java
-List<String> namen = new ArrayList<String>();
-
-namen.add("Kimon");
-namen.add("Max");
-
-namen[0] // -> Kimon?
-```
 ---
 
 class: middle, left
@@ -229,6 +217,9 @@ namen.add("Max");
 
 namen[0] // -> Kimon? Error :(
 ```
+
+### Ein Zugriff auf Elemente wie bei Arrays geht bei Listen nicht
+
 ---
 
 class: middle, left
@@ -242,6 +233,91 @@ System.out.println(namen[0]);
 System.out.println(namen.length);
 // 2
 ```
+### Java hat auch Arrays ähnlich den Arrays in JavaScript (BSI)
+### allerdings bietet der Arrays-Typ weniger Methoden an, um damit zu arbeiten
+
+---
+
+class: middle, left
+
+```java
+boolean trueOrFalse = true;
+
+if (trueOrFalse == true) {
+  // Code zwischen { und } wird ausgeführt
+  // wenn die Bedingung in der Klammer gültig ist
+  System.out.println("https://www.youtube.com/watch?v=MCT80HJWQ2A");
+} else {
+  // Ansonsten, also nur, wenn ein if vorm else nicht ausgeführt wurde
+  // wird dieser Code ausgeführt
+  System.out.println("https://www.youtube.com/watch?v=GM-e46xdcUo");
+}
+
+```
+
+---
+
+class: middle, left
+
+```java
+boolean printFirstName = true;
+boolean printSecondName = true;
+
+if (printFirstName == true) {
+  System.out.println("Max");
+} else if (printSecondName == true) {
+  System.out.println("Kimon");
+} else {
+  System.out.println("Keine Namen :(");
+}
+
+```
+
+### Obwohl beide Bedingungen der ifs gültig sind wird nur "Max" ausgegeben
+
+---
+
+class: middle, left
+
+```java
+boolean printFirstName = true;
+boolean printSecondName = true;
+
+if (printFirstName == true) {
+  System.out.println("Max");
+}
+
+if (printSecondName == true) {
+  System.out.println("Kimon");
+}
+
+if (printFirstName == false && printSecondName == false) {
+  System.out.println("Keine Namen :(");
+}
+
+```
+
+### Jetzt werden beide Namen ausgegeben
+
+---
+
+class: middle, left
+
+```java
+boolean trueOrFalse = true;
+
+if (trueOrFalse) {
+  // ...
+} else {
+  // ...
+}
+
+```
+
+### Das "== true" kann ausgelassen werden
+### Das Programm vergleicht dann immer noch die Bedingung mit "== true",
+### aber es muss nicht explizit geschrieben werden
+
 ---
 
 class: middle, center
