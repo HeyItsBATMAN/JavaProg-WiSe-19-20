@@ -8,38 +8,6 @@ Programmierpraktikum Java I im WiSe 2019/20
 
 class: middle, center
 
-# Who dat boi, who him is?
-
-## Kai Niebes
-
-## Langzeitstudent aus Leidenschaft
-
-## Hilfskraft im IDH
-
----
-
-class: middle, center
-
-![wrongclass](wrongclass.jpeg)
-
----
-
-class: middle, center
-
-
-# Organisatorisches
-
-Fixplätze
-
-Anwesenheitspflicht
-
-Andere Gruppen
-
-
----
-
-class: middle, center
-
 # Was passiert in diesem Kurs
 
 (Nach-)Besprechung der Inhalte der Vorlesung
@@ -107,32 +75,18 @@ public class HelloWorld {
 }
 ```
 
----
-
-class: center, middle
-
-# [Coding Conventions](caseconventions.jpeg)
+### Minimum an Code damit eine Java Anwendung ausführbar ist
 
 ---
 
 class: center, middle
 
 # Objektorientierte Programmierung (OOP)
-
-## Warum?
-
----
-
-class: center, middle
-
-# Objektorientierte Programmierung (OOP)
-
-# Struktur!
 
 - Abstraktion (z.B. durch Klassen)
 - Datenkapselung (durch Einteilungen wie private, protected, public)
 - Polymorphie (Variablen mit mehreren/überschneidenden Datentypen)
-- Persistenz (Variablen existierne mit ihren Objekten)
+- Persistenz (Variablen existieren mit ihren Objekten)
 - Vererbung (Klassen können aufeinander aufbauen)
 
 ---
@@ -141,13 +95,7 @@ class: center, middle
 
 # Klassen
 
-## Warum?
-
----
-
-class: center, middle
-
-# Klassen
+## Warum Klassen?
 
 ## Weil wir nicht alles in primitiven Datentypen ausdrücken wollen
 
@@ -180,19 +128,9 @@ class: center, middle
 
 # Klassen
 
-## Wo ist String?
-
-String ist kein primitiver Datentyp
-
-String ist (in simpler Form) eine Anreihung von chars
-
----
-
-class: center, middle
-
-# Klassen
-
 ## Programmierbeispiel
+
+### Code ist auf ILIAS zu finden
 
 ---
 
@@ -211,6 +149,8 @@ Ist gewöhnungsbedürftig
 class: center, middle
 
 # Alternativen zu Eclipse
+
+### Jetbrains IntelliJ Community
 
 ![IntelliJDL](intellijdl.png)
 
