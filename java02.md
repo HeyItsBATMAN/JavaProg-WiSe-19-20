@@ -335,5 +335,3 @@ class: center, middle
 class: center, middle
 
 # Bierle?
-
----

@@ -44,6 +44,15 @@
         color: #444;
       }
 
+      th {
+        padding-right: 2rem;
+      }
+
+      pre code {
+        font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !important;
+        letter-spacing: 1px;
+      }
+
       #weeks {
         display: flex;
         justify-content: center;
@@ -76,7 +85,7 @@
         <option selected value="">Wähle eine Woche aus</option>
         <option value="java01.md">10.10.19</option>
         <option value="java02.md">17.10.19</option>
-        <option disabled value="java03.md">24.10.19</option>
+        <option value="java03.md">24.10.19</option>
         <option disabled value="java04.md">31.10.19</option>
         <option disabled value="java05.md">07.11.19</option>
         <option disabled value="java06.md">14.11.19</option>
@@ -124,7 +133,7 @@
       });
     };
 
-    swapSource("java02.md");
+    swapSource("java03.md");
 
     /*const changeSelection = (selectElement) => {
       window.location.hash = '#1';

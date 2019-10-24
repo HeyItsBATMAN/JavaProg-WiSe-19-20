@@ -169,5 +169,3 @@ class: center, middle
 # Danke für eure Aufmerksamkeit
 
 # Bierle?
-
----
