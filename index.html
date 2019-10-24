@@ -3,12 +3,19 @@
 
 <head>
     <style type="text/css">
+      @keyframes fadein {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
       * {
         /*The Helvetica/Arial-based sans serif */
         font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
         list-style: none;
         max-height: 100%;
+
+        box-shadow: none !important;
       }
 
       li {
@@ -38,22 +45,22 @@
       }
 
       #weeks {
-        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
 
-
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
       }
 
-      #weeks div {
-        display: grid;
-        grid-template-columns: repeat(15, 1fr);
+      div[class^="remark"] {
+        animation: fadein 280ms;
       }
 
       body {
-        display: grid;
-        grid-template-rows: 4% 96%;
+        background: white !important;
       }
 
       button {
@@ -65,29 +72,76 @@
 
 <body>
     <div id="weeks">
-      <div>
-        <button onclick="swapSource('java01.md')">10.10.19</button>
-        <button onclick="swapSource('java02.md')">17.10.19</button>
-        <button disabled onclick="swapSource('java03.md')">24.10.19</button>
-        <button disabled onclick="swapSource('java04.md')">31.10.19</button>
-        <button disabled onclick="swapSource('java05.md')">07.11.19</button>
-        <button disabled onclick="swapSource('java06.md')">14.11.19</button>
-        <button disabled onclick="swapSource('java07.md')">21.11.19</button>
-        <button disabled onclick="swapSource('java08.md')">28.11.19</button>
-        <button disabled onclick="swapSource('java09.md')">05.12.19</button>
-        <button disabled onclick="swapSource('java10.md')">12.12.19</button>
-        <button disabled onclick="swapSource('java11.md')">19.12.19</button>
-        <button disabled onclick="swapSource('java12.md')">09.01.20</button>
-        <button disabled onclick="swapSource('java13.md')">16.01.20</button>
-        <button disabled onclick="swapSource('java14.md')">23.01.20</button>
-        <button disabled onclick="swapSource('java15.md')">30.01.20</button>
-      </div>
+      <select id="selectsource" onchange="changeSelection(this);">
+        <option selected value="">Wähle eine Woche aus</option>
+        <option value="java01.md">10.10.19</option>
+        <option value="java02.md">17.10.19</option>
+        <option disabled value="java03.md">24.10.19</option>
+        <option disabled value="java04.md">31.10.19</option>
+        <option disabled value="java05.md">07.11.19</option>
+        <option disabled value="java06.md">14.11.19</option>
+        <option disabled value="java07.md">21.11.19</option>
+        <option disabled value="java08.md">28.11.19</option>
+        <option disabled value="java09.md">05.12.19</option>
+        <option disabled value="java10.md">12.12.19</option>
+        <option disabled value="java11.md">19.12.19</option>
+        <option disabled value="java12.md">09.01.20</option>
+        <option disabled value="java13.md">16.01.20</option>
+        <option disabled value="java14.md">23.01.20</option>
+        <option disabled value="java15.md">30.01.20</option>
+      </select>
     </div>
-    <textarea id="source">
-    </textarea>
     <script src="./remark-latest.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
+    "use strict";
+    var changeSelection = function changeSelection(selectElement) {
+      window.location.hash = "#1";
+
+      if (selectElement.value !== "") {
+        swapSource(selectElement.value);
+      }
+    };
+
+    var swapSource = function swapSource(file) {
+      var params = new URLSearchParams();
+      params.set("source", file);
+      var newurl = ""
+        .concat(window.location.protocol, "//")
+        .concat(window.location.host)
+        .concat(window.location.pathname, "?")
+        .concat(params.toString())
+        .concat(window.location.hash);
+
+      window.history.pushState({ path: newurl }, "", newurl);
+
+      var oldSlides = document.querySelectorAll('div[class^="remark"]');
+      oldSlides.forEach(function(slide) {
+        return (slide.outerHTML = "");
+      });
+
+      var slideshow = remark.create({
+        sourceUrl: file
+      });
+    };
+
+    swapSource("java02.md");
+
+    /*const changeSelection = (selectElement) => {
+      window.location.hash = '#1';
+      if (selectElement.value !== '') {
+        swapSource(selectElement.value);
+      }
+    };
+
     const swapSource = (file) => {
+      const params = new URLSearchParams();
+      params.set('source', file);
+
+      const newurl =
+        `${window.location.protocol}//${window.location.host}${window.location.pathname}?${params.toString()}${window.location.hash}`;
+
+      window.history.pushState({path: newurl}, '', newurl);
+
       const oldSlides = document.querySelectorAll('div[class^="remark"]');
       oldSlides.forEach(slide => slide.outerHTML = '');
 
@@ -96,7 +150,7 @@
       });
     };
 
-    swapSource('java02.md');
+    swapSource('java02.md');*/
     </script>
 </body>
 
