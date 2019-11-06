@@ -329,6 +329,8 @@ class: middle, left
 
 #### Wie könnte man das Spiel Hangman mit den besprochenen Elementen umsetzen?
 
+#### [Aufgabe + Lösung hier](https://github.com/HeyItsBATMAN/JavaProg-WiSe-19-20/blob/master/Hangman.zip)
+
 ---
 
 class: middle, center
