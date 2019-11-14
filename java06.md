@@ -12,7 +12,7 @@ Fragen zur Vorlesung
 
 Wiederholung: Arrays
 
-Mehrdimensionale Arrays
+~~Mehrdimensionale Arrays~~
 
 Implementierung: Doppelte Zahl in unsortiertem Array finden
 
