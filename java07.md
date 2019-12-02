@@ -98,7 +98,7 @@ class: middle, left
 #### for-each Loops können hier bei der Übersichtlichkeit helfen
 
 ```java
-int[][] tabelle = {{1, 2, 3}, {4, 5, 6}};
+int[][] tabelle = { {1, 2, 3}, {4, 5, 6} };
 
 for (int[] zeile : tabelle) {
   for (int spalte : zeile) {
